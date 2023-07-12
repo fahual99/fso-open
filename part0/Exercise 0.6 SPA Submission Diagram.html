@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SPA Submission Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <pre class="mermaid">
+        sequenceDiagram
+        actor User
+        participant b as Browser
+        participant s as Server
+        User->>b: Submit notes
+        Note left of b: Note added to notes list by the event handler
+        b-->>User: Rerender Notes list
+        Note over b,s: Data from Note to be sent as JSON
+        b->>s: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+        s-->>b: 201 Status code
+    </pre>
+</body>
+</html>
