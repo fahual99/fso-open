@@ -13,12 +13,12 @@
         actor User
         participant b as Browser
         participant s as Server
-        User->>b: Submit notes
+        User->>+b: Submit notes
         Note left of b: Note added to notes list by the event handler
         b-->>User: Rerender Notes list
-        Note over b,s: Data from Note to be sent as JSON
-        b->>s: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-        s-->>b: 201 Status code
+        Note over b,s: Data from Note to be stored as JSON string
+        b->>+s: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+        s-->>-b: 201 Status code    
     </pre>
 </body>
 </html>
