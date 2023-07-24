@@ -1,0 +1,29 @@
+<body>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <pre class="mermaid">
+        sequenceDiagram
+        actor User
+        participant b as Browser
+        participant s as Server
+        User->>b: Submit notes
+        b->>s: Send user's notes to Server
+        Note right of b: POST request
+        Note left of s: User's notes Added
+        Note left of s: 302 code response
+        s-->>b: Redirect to https://studies.cs.helsinki.fi/exampleapp/notes
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/notes
+        s-->>b: HTML Document
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        s-->>b: CSS File
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        Note over b,s: The JS file tells the browser to fetch JSON from the provided location
+        s-->>b: JS File
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        s-->>b: Uppdated JSON File
+        b->>User: Render updated page
+
+    </pre>
+  </body>

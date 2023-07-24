@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SPA Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <pre class="mermaid">
+        sequenceDiagram
+        actor User
+        participant b as Browser
+        participant s as Server
+        User->>b: Visit SPA Page
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/spa
+        s-->>b: HTML Document
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        s-->>b: CSS File
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+        s-->>b: JS File
+        b->>s: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        s-->>b: JSON File
+        b->>User: Render Page
+    </pre>
+</body>
+</html>

@@ -1,0 +1,38 @@
+h1 {
+    color: green;
+    font-style: italic;
+}
+
+.success {
+    color: green;
+    text-align: center;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+.modified {
+    border-color: rgb(214, 249, 108);
+    text-align: center;
+    color: black;
+    background: rgb(214, 249, 108);
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    background: lightgrey;
+    text-align: center;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
